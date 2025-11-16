@@ -56,7 +56,7 @@ export const Home = (): JSX.Element => {
           <img
             className="w-full max-w-[1400px] h-16"
             alt="Section separator"
-            src="/section---separator-1.svg"
+            src="/section---separator.svg"
           />
         </div>
 
