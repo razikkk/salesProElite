@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "../../../../components/ui/button";
+import { Card, CardContent } from "../../../../components/ui/card";
 import React from "react";
 
 const testimonials = [
@@ -46,127 +46,99 @@ const cornerBrackets = [
 
 export const TestimonialsSection = (): JSX.Element => {
   return (
-    <section className="w-full flex flex-col gap-[68px] py-[100px] px-20">
-      <header className="flex flex-col gap-[9.1px]">
-        <div className="flex justify-center">
-          <div className="w-[132.55px] h-[41.6px] relative bg-[#04558f1a]">
-            <div className="absolute w-full h-full top-0 left-0">
-              {cornerBrackets.map((bracket, index) => (
-                <div
-                  key={index}
-                  className={`${bracket.top} ${bracket.left} border-[#04558f] ${bracket.rotation} absolute w-2.5 h-2.5 border-t [border-top-style:solid] border-l [border-left-style:solid]`}
-                />
-              ))}
-            </div>
+    <section className="w-full flex flex-col gap-16 py-20 px-6 md:px-20">
+  {/* TOP LABEL */}
+  <header className="flex flex-col gap-4 items-center">
+    <div className="relative bg-[#04558f1a] w-[132px] h-[42px] flex items-center justify-center">
+      {cornerBrackets.map((bracket, index) => (
+        <div
+          key={index}
+          className={`${bracket.top} ${bracket.left} border-[#04558f] ${bracket.rotation} absolute w-2.5 h-2.5 border-t border-l`}
+        />
+      ))}
 
-            <div className="absolute top-2.5 left-[calc(50.00%_-_54px)] w-[109px] h-[22px] flex items-center justify-center [font-family:'Geist',Helvetica] font-medium text-[#04558f] text-lg text-center tracking-[0] leading-[21.6px] whitespace-nowrap">
-              Testimonial
-            </div>
+      <span className="font-medium text-[#04558f] text-lg">Testimonial</span>
 
-            <div className="border border-solid border-[#04558f1a] absolute w-full h-full top-0 left-0" />
+      <div className="border border-[#04558f1a] absolute inset-0" />
+    </div>
+
+    {/* HEADING */}
+    <h2 className="font-medium text-black text-4xl md:text-6xl text-center leading-tight">
+      What Our Clients Say
+    </h2>
+  </header>
+
+  {/* GRID */}
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    {/* LEFT LARGE CARD */}
+    <Card className="bg-[#cecece] rounded-[25px] overflow-hidden border-0 shadow-md min-h-[500px] flex">
+      <CardContent className="p-6 flex flex-col justify-between w-full">
+        {/* Profile */}
+        <div className="flex items-center gap-4">
+          <div
+            className="w-[54px] h-[54px] rounded-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${testimonials[0].profileImage})` }}
+          />
+          <div>
+            <h3 className="font-semibold text-black/80 text-lg">
+              {testimonials[0].name}
+            </h3>
+            <p className="text-black/50 text-sm">{testimonials[0].role}</p>
           </div>
         </div>
 
-        <div className="h-[60px] relative">
-          {headingWords.map((word, index) => (
-            <div
-              key={index}
-              className={`absolute top-0 ${word.left} ${word.width} h-[60px] flex justify-center`}
-            >
-              <div className="flex items-center justify-center mt-[-9px] h-[78px] [font-family:'Geist',Helvetica] font-medium text-black text-6xl text-center tracking-[-1.80px] leading-[60px]">
-                {word.text}
-              </div>
-            </div>
-          ))}
-        </div>
-      </header>
+        {/* Image */}
+        <div
+          className="w-full h-48 md:h-60 rounded-[20px] bg-cover bg-center"
+          style={{ backgroundImage: `url(${testimonials[0].contentImage})` }}
+        />
 
-      <div className="grid grid-cols-[522px_1fr] gap-6 h-[544px]">
-        <Card className="bg-[#cecece] rounded-[25px] overflow-hidden shadow-[inset_0px_1px_4px_#ffffff1a] border-0">
-          <CardContent className="p-[30px] h-full flex flex-col gap-9">
+        {/* Text */}
+        <p className="text-black/70 leading-relaxed text-base">
+          {testimonials[0].text}
+        </p>
+      </CardContent>
+    </Card>
+
+    {/* RIGHT STACKED CARDS */}
+    <div className="flex flex-col gap-6">
+      {testimonials.slice(1).map((item) => (
+        <Card
+          key={item.id}
+          className="bg-[#cecece] rounded-[25px] overflow-hidden border-0 shadow-md flex-1 min-h-[240px]"
+        >
+          <CardContent className="p-6 flex flex-col justify-between h-full">
+            {/* Profile */}
             <div className="flex items-center gap-4">
               <div
-                className="w-[54px] h-[54px] rounded-[54px] bg-cover bg-center flex-shrink-0"
-                style={{
-                  backgroundImage: `url(${testimonials[0].profileImage})`,
-                }}
+                className="w-[54px] h-[54px] rounded-full bg-cover bg-center"
+                style={{ backgroundImage: `url(${item.profileImage})` }}
               />
-              <div className="flex flex-col gap-2">
-                <div className="[font-family:'Geist',Helvetica] font-semibold text-[#cecece] text-xl tracking-[-0.60px] leading-5">
-                  {testimonials[0].name}
-                </div>
-                <div className="[font-family:'Geist',Helvetica] font-medium text-[#00000080] text-lg tracking-[0] leading-[21.6px]">
-                  {testimonials[0].role}
-                </div>
+              <div>
+                <h3 className="font-semibold text-black/80 text-lg">
+                  {item.name}
+                </h3>
+                <p className="text-black/50 text-sm">{item.role}</p>
               </div>
             </div>
 
-            <div
-              className="flex-1 rounded-[20px] bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${testimonials[0].contentImage})`,
-              }}
-            />
-
-            <p className="[font-family:'Geist',Helvetica] font-normal text-[#00000099] text-base tracking-[0] leading-[25.6px]">
-              {testimonials[0].text.split("\n").map((line, i) => (
-                <React.Fragment key={i}>
-                  {line}
-                  {i < testimonials[0].text.split("\n").length - 1 && <br />}
-                </React.Fragment>
-              ))}
+            {/* Text */}
+            <p className="text-black/70 leading-relaxed text-base">
+              {item.text}
             </p>
           </CardContent>
         </Card>
+      ))}
+    </div>
+  </div>
 
-        <div className="flex flex-col gap-6">
-          {testimonials.slice(1).map((testimonial) => (
-            <Card
-              key={testimonial.id}
-              className="bg-[#cecece] rounded-[25px] overflow-hidden shadow-[inset_0px_1px_4px_#ffffff1a] border-0 flex-1"
-            >
-              <CardContent className="p-[30px] h-full flex flex-col justify-between">
-                <div className="flex items-center gap-4">
-                  <div
-                    className="w-[54px] h-[54px] rounded-[54px] bg-cover bg-center flex-shrink-0"
-                    style={{
-                      backgroundImage: `url(${testimonial.profileImage})`,
-                    }}
-                  />
-                  <div className="flex flex-col gap-2">
-                    <div className="[font-family:'Geist',Helvetica] font-semibold text-[#cecece] text-xl tracking-[-0.60px] leading-5">
-                      {testimonial.name}
-                    </div>
-                    <div className="[font-family:'Geist',Helvetica] font-medium text-[#00000080] text-lg tracking-[0] leading-[21.6px]">
-                      {testimonial.role}
-                    </div>
-                  </div>
-                </div>
+  {/* BUTTON */}
+  <div className="flex justify-center">
+    <Button className="bg-black/10 rounded-xl px-6 py-3 font-semibold text-black text-lg">
+      See All
+    </Button>
+  </div>
+</section>
 
-                <p className="[font-family:'Geist',Helvetica] font-normal text-[#00000099] text-base tracking-[0] leading-[25.6px]">
-                  {testimonial.text.split("\n").map((line, i) => (
-                    <React.Fragment key={i}>
-                      {line}
-                      {i < testimonial.text.split("\n").length - 1 && <br />}
-                    </React.Fragment>
-                  ))}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex justify-center">
-        <Button
-          variant="ghost"
-          className="h-auto bg-[linear-gradient(0deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.08)_100%),linear-gradient(0deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.08)_100%)] rounded-xl px-5 py-3.5"
-        >
-          <span className="[font-family:'Geist',Helvetica] font-semibold text-black text-lg text-center tracking-[-0.36px] leading-[21.6px]">
-            See All
-          </span>
-        </Button>
-      </div>
-    </section>
   );
 };

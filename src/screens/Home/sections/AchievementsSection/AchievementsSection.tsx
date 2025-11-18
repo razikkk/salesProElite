@@ -22,30 +22,37 @@ const achievementsData = [
 
 export const AchievementsSection = (): JSX.Element => {
   return (
-    <section className="w-full flex flex-col gap-[68px] py-20">
-      <div className="flex justify-center items-center">
-        <h2 className="[font-family:'Geist',Helvetica] font-medium text-black text-6xl text-center tracking-[-1.80px] leading-[60px]">
-          Impact In Numbers
-        </h2>
-      </div>
+    <section className="w-full flex flex-col gap-16 py-16 md:py-20">
+  {/* Heading */}
+  <div className="flex justify-center items-center px-4">
+    <h2 className="[font-family:'Geist',Helvetica] font-medium text-black 
+      text-4xl md:text-6xl text-center tracking-[-1.8px] leading-tight">
+      Impact In Numbers
+    </h2>
+  </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 px-20">
-        {achievementsData.map((achievement, index) => (
-          <Card
-            key={index}
-            className="bg-[#04558f] rounded-[25px] overflow-hidden shadow-[inset_0px_1px_4px_#ffffff1a] border-0"
-          >
-            <CardContent className="flex flex-col justify-between h-[291px] p-6">
-              <div className="[font-family:'Geist',Helvetica] font-semibold text-white text-[50px] tracking-[-1.50px] leading-[50px]">
-                {achievement.value}
-              </div>
-              <div className="[font-family:'Geist',Helvetica] font-medium text-white text-xl tracking-[0] leading-6">
-                {achievement.label}
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </section>
+  {/* Cards Grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 md:px-12 lg:px-20">
+    {achievementsData.map((achievement, index) => (
+      <Card
+        key={index}
+        className="bg-[#04558f] rounded-[25px] overflow-hidden shadow-[inset_0px_1px_4px_#ffffff1a] border-0"
+      >
+        <CardContent className="flex flex-col justify-between h-[250px] md:h-[291px] p-6">
+          <div className="[font-family:'Geist',Helvetica] font-semibold text-white 
+            text-4xl md:text-[50px] tracking-[-1.5px] leading-[1.1]">
+            {achievement.value}
+          </div>
+
+          <div className="[font-family:'Geist',Helvetica] font-medium text-white 
+            text-lg md:text-xl leading-6">
+            {achievement.label}
+          </div>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</section>
+
   );
 };

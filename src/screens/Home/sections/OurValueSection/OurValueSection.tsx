@@ -43,87 +43,100 @@ const subtitleWords = [
  const OurValueSection = (): JSX.Element => {
   return (
     <section className="w-full py-20 px-5">
-      <div className="max-w-[1400px] mx-auto">
-      <header className="mb-40">
-  <div className="flex flex-col items-center text-center gap-6">
-
-    {/* Main Title */}
-    <div className="flex gap-3 justify-center">
-      <h2 className="[font-family:'Geist',Helvetica] font-medium text-black text-6xl tracking-[-1.80px] leading-[60px]">
-        Our
-      </h2>
-      <h2 className="[font-family:'Geist',Helvetica] font-medium text-black text-6xl tracking-[-1.80px] leading-[60px]">
-        Value
-      </h2>
-    </div>
-
-    {/* Subtitle Words */}
-    <div className="flex flex-wrap justify-center gap-x-1 gap-y-1 max-w-[900px]">
-      {subtitleWords.map((word, index) => (
-        <span
-          key={index}
-          className="[font-family:'Geist',Helvetica] font-medium text-[#00000099] text-lg tracking-[0] leading-[21.6px]"
-        >
-          {word}
-        </span>
-      ))}
-    </div>
-
-  </div>
-</header>
-
-
-        <div className="flex flex-col gap-[100px]">
-          {valueItems.map((item, index) => (
-            <div key={index} className="grid grid-cols-2 gap-12 items-center">
-              {item.imagePosition === "left" ? (
-                <>
-                  <div
-                    className="rounded-[30px] h-[470px] bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: `url(${item.imageSrc})` }}
-                  />
-                  <div className="flex flex-col gap-6">
-                    <div className="relative w-fit bg-[#04558f1a] border border-solid border-[#04558f1a] px-3 py-2.5">
-                      <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-solid border-[#04558f]" />
-                      <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-solid border-[#04558f]" />
-                      <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-solid border-[#04558f]" />
-                      <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b border-r border-solid border-[#04558f]" />
-                      <span className="[font-family:'Geist',Helvetica] font-medium text-[#04558f] text-lg tracking-[0] leading-[21.6px]">
-                        {item.badge}
-                      </span>
-                    </div>
-                    <p className="[font-family:'Geist',Helvetica] font-medium text-black text-[32px] tracking-[0] leading-[44.8px]">
-                      {item.description}
-                    </p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="flex flex-col gap-6">
-                    <div className="relative w-fit bg-[#04558f1a] border border-solid border-[#04558f1a] px-3 py-2.5">
-                      <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-solid border-[#04558f]" />
-                      <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-solid border-[#04558f]" />
-                      <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-solid border-[#04558f]" />
-                      <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b border-r border-solid border-[#04558f]" />
-                      <span className="[font-family:'Geist',Helvetica] font-medium text-[#04558f] text-lg tracking-[0] leading-[21.6px]">
-                        {item.badge}
-                      </span>
-                    </div>
-                    <p className="[font-family:'Geist',Helvetica] font-medium text-black text-[32px] tracking-[0] leading-[44.8px]">
-                      {item.description}
-                    </p>
-                  </div>
-                  <div
-                    className="rounded-[30px] h-[470px] bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: `url(${item.imageSrc})` }}
-                  />
-                </>
-              )}
-            </div>
-          ))}
+    <div className="max-w-[1400px] mx-auto">
+  
+      {/* Header */}
+      <header className="mb-20 md:mb-40">
+        <div className="flex flex-col items-center text-center gap-6">
+          <div className="flex gap-3 justify-center flex-wrap">
+            <h2 className="font-medium text-black text-4xl md:text-6xl leading-tight">
+              Our
+            </h2>
+            <h2 className="font-medium text-black text-4xl md:text-6xl leading-tight">
+              Value
+            </h2>
+          </div>
+  
+          <div className="flex flex-wrap justify-center gap-1 max-w-[900px]">
+            {subtitleWords.map((word, index) => (
+              <span
+                key={index}
+                className="font-medium text-[#00000099] text-base md:text-lg"
+              >
+                {word}
+              </span>
+            ))}
+          </div>
         </div>
+      </header>
+  
+      {/* Value Items */}
+      <div className="flex flex-col gap-[60px] md:gap-[100px]">
+        {valueItems.map((item, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center"
+          >
+            {/* Image Left */}
+            {item.imagePosition === "left" ? (
+              <>
+                <div
+                  className="rounded-[20px] md:rounded-[30px] h-[300px] md:h-[470px] bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: `url(${item.imageSrc})` }}
+                />
+  
+                <div className="flex flex-col gap-4 md:gap-6 text-center md:text-left">
+                  {/* Badge */}
+                  <div className="relative w-fit mx-auto md:mx-0 bg-[#04558f1a] border border-[#04558f1a] px-3 py-2">
+                    <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-[#04558f]" />
+                    <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-[#04558f]" />
+                    <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-[#04558f]" />
+                    <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b border-r border-[#04558f]" />
+  
+                    <span className="font-medium text-[#04558f] text-base md:text-lg">
+                      {item.badge}
+                    </span>
+                  </div>
+  
+                  {/* Description */}
+                  <p className="font-medium text-black text-xl md:text-[32px] leading-[30px] md:leading-[44px]">
+                    {item.description}
+                  </p>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* Text first */}
+                <div className="flex flex-col gap-4 md:gap-6 text-center md:text-left">
+                  <div className="relative w-fit mx-auto md:mx-0 bg-[#04558f1a] border border-[#04558f1a] px-3 py-2">
+                    <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-[#04558f]" />
+                    <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-[#04558f]" />
+                    <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-[#04558f]" />
+                    <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-b border-r border-[#04558f]" />
+  
+                    <span className="font-medium text-[#04558f] text-base md:text-lg">
+                      {item.badge}
+                    </span>
+                  </div>
+  
+                  <p className="font-medium text-black text-xl md:text-[32px] leading-[30px] md:leading-[44px]">
+                    {item.description}
+                  </p>
+                </div>
+  
+                {/* Image Right */}
+                <div
+                  className="rounded-[20px] md:rounded-[30px] h-[300px] md:h-[470px] bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: `url(${item.imageSrc})` }}
+                />
+              </>
+            )}
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
+  </section>
+  
   );
 };
 

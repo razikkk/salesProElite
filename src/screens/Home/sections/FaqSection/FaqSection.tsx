@@ -43,34 +43,47 @@ const faqItems = [
 export const FaqSection = (): JSX.Element => {
   return (
     <section className="w-full flex flex-col gap-[68px] py-[100px]">
-      <div className="mx-auto flex flex-col gap-4 items-center">
-        <div className="w-[58.44px] h-[41.6px] relative">
-          <div className="absolute w-full h-full top-0 left-0">
-            <div className="top-0 left-0 border-[#04558f] absolute w-2.5 h-2.5 border-t [border-top-style:solid] border-l [border-left-style:solid]" />
-            <div className="top-8 left-0 border-[#04558f] -rotate-90 absolute w-2.5 h-2.5 border-t [border-top-style:solid] border-l [border-left-style:solid]" />
-            <div className="top-0 left-12 border-[#04558f] rotate-90 absolute w-2.5 h-2.5 border-t [border-top-style:solid] border-l [border-left-style:solid]" />
-            <div className="top-8 left-12 border-[#04558f] rotate-180 absolute w-2.5 h-2.5 border-t [border-top-style:solid] border-l [border-left-style:solid]" />
-          </div>
-          <div className="absolute top-2.5 left-[calc(50.00%_-_17px)] w-[35px] h-[22px] flex items-center justify-center [font-family:'Geist',Helvetica] font-medium text-[#04558f99] text-lg text-center tracking-[0] leading-[21.6px] whitespace-nowrap">
-            Faq
-          </div>
-          <div className="border border-solid border-[#04558f1a] absolute w-full h-full top-0 left-0" />
-        </div>
+   <div className="mx-auto flex flex-col gap-6 items-center">
 
-        <div className="flex flex-col items-center">
-          <div className="flex gap-4">
-            <h2 className="[font-family:'Geist',Helvetica] font-medium text-black text-6xl text-center tracking-[-1.80px] leading-[60px]">
-              Frequently
-            </h2>
-            <h2 className="[font-family:'Geist',Helvetica] font-medium text-black text-6xl text-center tracking-[-1.80px] leading-[60px]">
-              Asked
-            </h2>
-          </div>
-          <h2 className="[font-family:'Geist',Helvetica] font-medium text-black text-6xl text-center tracking-[-1.80px] leading-[60px]">
-            Questions
-          </h2>
-        </div>
-      </div>
+{/* Small Label Box */}
+<div
+  className="relative px-6 py-2 bg-[#04558f1a]
+  inline-flex items-center justify-center
+  min-w-[80px] w-auto h-auto"
+>
+  {/* Corners */}
+  <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-[#04558f]" />
+  <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-t border-l border-[#04558f] -rotate-90" />
+  <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-l border-[#04558f] rotate-90" />
+  <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-t border-l border-[#04558f] rotate-180" />
+
+  {/* Border */}
+  <div className="absolute inset-0 border border-[#04558f1a]" />
+
+  {/* Text */}
+  <span className="relative z-10 text-[#04558f99] font-medium text-lg whitespace-nowrap">
+    FAQ
+  </span>
+</div>
+
+{/* Title */}
+<div className="flex flex-col items-center text-center">
+  <div className="flex gap-3 flex-wrap justify-center">
+    <h2 className="font-medium text-black text-4xl sm:text-5xl md:text-6xl leading-tight">
+      Frequently
+    </h2>
+    <h2 className="font-medium text-black text-4xl sm:text-5xl md:text-6xl leading-tight">
+      Asked
+    </h2>
+  </div>
+
+  <h2 className="font-medium text-black text-4xl sm:text-5xl md:text-6xl leading-tight">
+    Questions
+  </h2>
+</div>
+
+</div>
+
 
       <div className="mx-auto w-full max-w-[660px] px-4">
         <Accordion

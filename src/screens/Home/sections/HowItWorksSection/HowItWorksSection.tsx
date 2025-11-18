@@ -46,32 +46,52 @@ export const HowItWorksSection = (): JSX.Element => {
     <section className="relative w-full py-20">
       <div className="container mx-auto px-5">
         <div className="flex flex-col gap-[15.5px] mb-[68px]">
-          <div className="flex justify-center">
-            <div className="relative shadow-[0px_4px_4px_#00000040] w-[132.55px] h-[41.6px] bg-[#04558f1a]">
-              <div className="absolute w-full h-full top-0 left-0">
-                <div className="top-0 left-0 border-[#04558f] absolute w-2.5 h-2.5 border-t [border-top-style:solid] border-l [border-left-style:solid]" />
-                <div className="top-8 left-0 border-[#04558f] -rotate-90 absolute w-2.5 h-2.5 border-t [border-top-style:solid] border-l [border-left-style:solid]" />
-                <div className="top-0 left-[123px] border-[#04558f] rotate-90 absolute w-2.5 h-2.5 border-t [border-top-style:solid] border-l [border-left-style:solid]" />
-                <div className="top-8 left-[123px] border-[#04558f] rotate-180 absolute w-2.5 h-2.5 border-t [border-top-style:solid] border-l [border-left-style:solid]" />
-              </div>
-              <div className="absolute top-2.5 left-[calc(50.00%_-_56px)] w-[121px] h-[22px] flex items-center justify-center [font-family:'Geist',Helvetica] font-medium text-[#04558f] text-lg text-center tracking-[0] leading-[21.6px] whitespace-nowrap">
-                How It Works
-              </div>
-              <div className="border border-solid border-[#04558f1a] absolute w-full h-full top-0 left-0" />
-            </div>
-          </div>
+        <div className="flex justify-center">
+  <div
+    className="relative shadow-[0px_4px_4px_#00000040]
+    px-6 py-2 bg-[#04558f1a]
+    inline-flex items-center justify-center
+    min-w-[130px] sm:min-w-[150px]
+    w-auto h-auto"
+  >
+    {/* Corners */}
+    <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-[#04558f]" />
+    <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-t border-l border-[#04558f] -rotate-90" />
+    <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-l border-[#04558f] rotate-90" />
+    <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-t border-l border-[#04558f] rotate-180" />
 
-          <div className="flex justify-center items-center gap-[13px] h-[60px]">
-            <div className="flex items-center justify-center [font-family:'Geist',Helvetica] font-medium text-black text-6xl text-center tracking-[-1.80px] leading-[60px]">
-              Our
-            </div>
-            <div className="flex items-center justify-center [font-family:'Geist',Helvetica] font-medium text-black text-6xl text-center tracking-[-1.80px] leading-[60px]">
-              Proven
-            </div>
-            <div className="flex items-center justify-center [font-family:'Geist',Helvetica] font-medium text-black text-6xl text-center tracking-[-1.80px] leading-[60px]">
-              Process
-            </div>
-          </div>
+    {/* Border */}
+    <div className="absolute inset-0 border border-[#04558f1a]" />
+
+    {/* Text */}
+    <span className="relative z-10 text-[#04558f] font-medium text-base sm:text-lg md:text-xl whitespace-nowrap">
+      How It Works
+    </span>
+  </div>
+</div>
+
+
+  {/* MAIN HEADING */}
+  <div className="
+    flex justify-center items-center gap-[10px] 
+    h-auto flex-wrap text-center">
+
+    <span className="font-medium text-black 
+      text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+      Our
+    </span>
+
+    <span className="font-medium text-black 
+      text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+      Proven
+    </span>
+
+    <span className="font-medium text-black 
+      text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+      Process
+    </span>
+
+  </div>
         </div>
 
         <div className="relative flex justify-center">
