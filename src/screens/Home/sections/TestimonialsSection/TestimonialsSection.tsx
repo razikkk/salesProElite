@@ -6,28 +6,28 @@ import FadeInView from "../../../../components/ui/FadeInView";
 const testimonials = [
   {
     id: 1,
-    name: "Sophia",
-    role: "Founder Of Cloud",
+    name: "Todd kransow",
+    // role: "Founder Of Cloud",
     profileImage: "/profile-image---szxn356qlumitmoloxeajnhm0ku-jpeg.png",
     contentImage: "/image---swiwwfm27xbubmg97nrmtork-png.png",
-    text: "We Partnered With Them To Refine Our Marketing Efforts,\nand The Results Have Been Outstanding. Their Creative\ncampaigns And Precise Execution Not Only Improved Our\nbrand Visibility But Also Consistently Fostered Significantly\nbetter Customer Retention.",
+    text: "Dilon is not the typitical marketing sales person, he follows through and delivers on what he says he's going to do.",
     type: "large",
   },
   {
     id: 2,
-    name: "Anjela",
-    role: "Ceo Of Technova",
+    name: "Agenaldo Bailey",
+    // role: "Ceo Of Technova",
     profileImage: "/profile-image---zkws8xtkh5wzqjleswi1psdgwy-png.png",
-    text: "Working With Them Has Been A Game Changer For Our Business. Their Innovative\nstrategies And Hands-on Approach Have Significantly Boosted Our Lead Generation.",
+    text: "I am very pleased with my service. My rep Dilon is accessible and attentive to my needs and concerns, GREAT GUY! ",
     type: "small",
   },
   {
     id: 3,
-    name: "Mark",
-    role: "Cmo Of Innosaas",
+    name: "Ron Stluka",
+    // role: "Cmo Of Innosaas",
     profileImage: "/profile-image---puq34xmkr1np7djeonn65dyquuw-jpeg.png",
-    text: "Them Completely Transformed Our Digital Marketing Strategy. Their Deep Understanding\nof Saas Dynamics And Data-driven Approach Allowed Us To Target The Right Audience,\nresulting In A 40% Increase In Sales Within Six Months.",
-    type: "small",
+    text: "Dilon",
+    type: "Dilon is very talented sales representative, and i have no hesitation in recomending him highly.",
   },
 ];
 
@@ -139,13 +139,13 @@ export const TestimonialsSection = (): JSX.Element => {
     </div>
   
     {/* BUTTON */}
-    <FadeInView delay={0.5}>
+    {/* <FadeInView delay={0.5}>
       <div className="flex justify-center">
         <Button className="bg-black/10 rounded-xl px-6 py-3 font-semibold text-black text-lg">
           See All
         </Button>
       </div>
-    </FadeInView>
+    </FadeInView> */}
   
   </section>
   
