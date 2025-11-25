@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import FadeInView from "../../../../components/ui/FadeInView";
 import React from "react";
 
 const processSteps = [
@@ -44,60 +45,48 @@ const profileImages = [
 export const HowItWorksSection = (): JSX.Element => {
   return (
     <section className="relative w-full py-20">
-      <div className="container mx-auto px-5">
+    <div className="container mx-auto px-5">
+  
+      {/* TITLE SECTION */}
+      <FadeInView>
         <div className="flex flex-col gap-[15.5px] mb-[68px]">
-        <div className="flex justify-center">
-  <div
-    className="relative shadow-[0px_4px_4px_#00000040]
-    px-6 py-2 bg-[#04558f1a]
-    inline-flex items-center justify-center
-    min-w-[130px] sm:min-w-[150px]
-    w-auto h-auto"
-  >
-    {/* Corners */}
-    <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-[#04558f]" />
-    <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-t border-l border-[#04558f] -rotate-90" />
-    <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-l border-[#04558f] rotate-90" />
-    <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-t border-l border-[#04558f] rotate-180" />
-
-    {/* Border */}
-    <div className="absolute inset-0 border border-[#04558f1a]" />
-
-    {/* Text */}
-    <span className="relative z-10 text-[#04558f] font-medium text-base sm:text-lg md:text-xl whitespace-nowrap">
-      How It Works
-    </span>
-  </div>
-</div>
-
-
-  {/* MAIN HEADING */}
-  <div className="
-    flex justify-center items-center gap-[10px] 
-    h-auto flex-wrap text-center">
-
-    <span className="font-medium text-black 
-      text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-      Our
-    </span>
-
-    <span className="font-medium text-black 
-      text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-      Proven
-    </span>
-
-    <span className="font-medium text-black 
-      text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-      Process
-    </span>
-
-  </div>
+          <div className="flex justify-center">
+            <div
+              className="relative shadow-[0px_4px_4px_#00000040]
+              px-6 py-2 bg-[#04558f1a]
+              inline-flex items-center justify-center
+              min-w-[130px] sm:min-w-[150px]">
+              
+              {/* Corners */}
+              <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-[#04558f]" />
+              <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-t border-l border-[#04558f] -rotate-90" />
+              <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-l border-[#04558f] rotate-90" />
+              <div className="absolute bottom-0 right-0 w-2.5 h-2.5 border-t border-l border-[#04558f] rotate-180" />
+  
+              {/* Border */}
+              <div className="absolute inset-0 border border-[#04558f1a]" />
+  
+              {/* Text */}
+              <span className="relative z-10 text-[#04558f] font-medium text-base sm:text-lg md:text-xl">
+                How It Works
+              </span>
+            </div>
+          </div>
+  
+          <div className="flex justify-center items-center gap-[10px] h-auto flex-wrap text-center">
+            <span className="font-medium text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Our</span>
+            <span className="font-medium text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Proven</span>
+            <span className="font-medium text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Process</span>
+          </div>
         </div>
-
-        <div className="relative flex justify-center">
-          <div className="w-[510px] flex flex-col gap-[84px]">
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative">
+      </FadeInView>
+  
+      {/* MAIN PROCESS STEPS */}
+      <div className="relative flex justify-center">
+        <div className="w-[510px] flex flex-col gap-[84px]">
+          {processSteps.map((step, index) => (
+            <FadeInView key={index}>
+              <div className="relative">
                 <Card className="bg-white rounded-[25px] overflow-hidden shadow-[0px_15px_33px_#00000066,0px_4.79px_10.53px_#00000021,0px_1.81px_3.98px_#0000000d,0px_0.6px_1.31px_#00000005] border border-solid border-[#0000009e]">
                   <CardContent className="p-6 flex flex-col gap-4">
                     <div className="[font-family:'Geist',Helvetica] font-semibold text-[#0000009e] text-[50px] tracking-[-1.50px] leading-[50px]">
@@ -111,6 +100,8 @@ export const HowItWorksSection = (): JSX.Element => {
                     </div>
                   </CardContent>
                 </Card>
+  
+                {/* Arrow */}
                 {index < processSteps.length - 1 && (
                   <img
                     className="absolute left-[239px] top-[223px] w-8 h-8"
@@ -119,23 +110,30 @@ export const HowItWorksSection = (): JSX.Element => {
                   />
                 )}
               </div>
-            ))}
-          </div>
-
-          {profileImages.map((image, index) => (
-            <div
-              key={index}
-              className={`absolute w-[76px] h-[76px] rounded-[76px] ${image.bgImage} bg-cover bg-[50%_50%] ${image.className}`}
-            />
+            </FadeInView>
           ))}
         </div>
-
+  
+        {/* PROFILE IMAGES */}
+        {profileImages.map((image, index) => (
+          <FadeInView key={index}>
+            <div
+              className={`absolute w-[76px] h-[76px] rounded-[76px] ${image.bgImage} bg-cover bg-[50%_50%] ${image.className}`}
+            />
+          </FadeInView>
+        ))}
+      </div>
+  
+      <FadeInView>
         <img
           className="w-full h-8 mt-[68px]"
           alt="Section separator"
           src="/section---separator.svg"
         />
-      </div>
-    </section>
+      </FadeInView>
+  
+    </div>
+  </section>
+  
   );
 };

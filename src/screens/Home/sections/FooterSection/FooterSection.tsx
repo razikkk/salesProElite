@@ -91,7 +91,7 @@ export const FooterSection = (): JSX.Element => {
       </div>
 
       {/* NEWSLETTER */}
-      <div className="flex flex-col gap-5 max-w-[400px]">
+      {/* <div className="flex flex-col gap-5 max-w-[400px]">
         <h3 className="font-medium text-[#ffffff80] text-xl">
           Newsletter
         </h3>
@@ -112,7 +112,7 @@ export const FooterSection = (): JSX.Element => {
             Submit
           </Button>
         </div>
-      </div>
+      </div> */}
 
     </div>
   </div>

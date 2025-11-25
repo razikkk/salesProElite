@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
 import { CheckIcon } from "lucide-react";
+import FadeInView from "../../../../components/ui/FadeInView";
 
 const PricingSection = (): JSX.Element => {
   const [activePlan, setActivePlan] = useState<"standard" | "enterprise">("standard");
@@ -47,6 +48,9 @@ const PricingSection = (): JSX.Element => {
   const selected = plans[activePlan];
 
   return (
+    <FadeInView>
+
+    
 <section className="w-full py-16 px-4 pt-32 md:pt-30">
   <div className="max-w-[700px] mx-auto">
 
@@ -153,6 +157,7 @@ const PricingSection = (): JSX.Element => {
     </Card>
   </div>
 </section>
+</FadeInView>
 
   );
 };

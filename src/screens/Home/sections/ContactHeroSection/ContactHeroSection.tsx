@@ -1,7 +1,11 @@
 import React from 'react'
+import FadeInView from '../../../../components/ui/FadeInView'
 
 const ContactHeroSection = () => {
   return (
+    <FadeInView>
+
+    
     <section className="w-full py-[140px] px-5">
     <div className="max-w-[1400px] mx-auto flex flex-col gap-[50px] items-center">
       <div className="flex flex-col gap-6 items-center max-w-[814px]">
@@ -23,7 +27,10 @@ const ContactHeroSection = () => {
         src="/asterix---asterix.svg"
       />
     </div>
-  </section>  )
+  </section> 
+  </FadeInView>
+  
+)
 }
 
 export default ContactHeroSection
